@@ -1,7 +1,9 @@
-package com.kevinpelgrims.pictureplayground;
+package com.kevinpelgrims.pictureplayground.views;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.kevinpelgrims.pictureplayground.R;
 
 public class MainActivity extends Activity {
     @Override

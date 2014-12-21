@@ -1,4 +1,4 @@
-package com.kevinpelgrims.pictureplayground;
+package com.kevinpelgrims.pictureplayground.views;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kevinpelgrims.pictureplayground.R;
 import com.kevinpelgrims.pictureplayground.adapters.PicturesAdapter;
 import com.kevinpelgrims.pictureplayground.model.Picture;
 
