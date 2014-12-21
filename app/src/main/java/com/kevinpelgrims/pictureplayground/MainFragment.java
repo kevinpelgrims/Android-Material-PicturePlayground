@@ -32,11 +32,11 @@ public class MainFragment extends Fragment {
 
     private void setupPictures(View view) {
         List<Picture> pictures = new ArrayList<Picture>();
-        pictures.add(new Picture("http://whatever.com", "name1", "description1"));
-        pictures.add(new Picture("http://whatever.com", "name2", "description2"));
-        pictures.add(new Picture("http://whatever.com", "name3", "description3"));
-        pictures.add(new Picture("http://whatever.com", "name4", "description4"));
-        pictures.add(new Picture("http://whatever.com", "name5", "description5"));
+        pictures.add(new Picture("http://aliceinreaderland.files.wordpress.com/2013/01/grumpy-cat.png", "Grumpy Cat", "Grumpy"));
+        pictures.add(new Picture("https://lh6.googleusercontent.com/-qdwnNEk24TM/AAAAAAAAAAI/AAAAAAAAAAA/trT7WE7acR8/photo.jpg", "Colonel Meow", "Description"));
+        pictures.add(new Picture("https://livinglist.beaglestreet.com/wp-content/uploads/BUB-yes-with-no-yes-copy-tighter-brighter-256x256.jpg", "Lil Bub", "..."));
+        pictures.add(new Picture("http://aliceinreaderland.files.wordpress.com/2013/01/grumpy-cat.png", "name4", "description4"));
+        pictures.add(new Picture("https://lh6.googleusercontent.com/-qdwnNEk24TM/AAAAAAAAAAI/AAAAAAAAAAA/trT7WE7acR8/photo.jpg", "name5", "description5"));
 
         RecyclerView picturesRecyclerView = (RecyclerView) view.findViewById(R.id.pictures_recycler_view);
 

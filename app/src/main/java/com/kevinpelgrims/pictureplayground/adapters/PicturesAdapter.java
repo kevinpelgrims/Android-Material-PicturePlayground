@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.kevinpelgrims.pictureplayground.R;
 import com.kevinpelgrims.pictureplayground.model.Picture;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,7 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Picture picture = pictures.get(position);
+        Picasso.with(context).load(picture.url).into(holder.image);
         holder.name.setText(picture.name);
         holder.description.setText(picture.description);
     }
