@@ -1,6 +1,8 @@
 package com.kevinpelgrims.pictureplayground.model;
 
-public class Picture {
+import java.io.Serializable;
+
+public class Picture implements Serializable {
     public String url;
     public String name;
     public String description;
