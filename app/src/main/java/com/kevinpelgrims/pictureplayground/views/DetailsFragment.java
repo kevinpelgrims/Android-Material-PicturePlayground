@@ -6,16 +6,18 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.kevinpelgrims.pictureplayground.R;
 import com.kevinpelgrims.pictureplayground.model.Picture;
+import com.squareup.picasso.Picasso;
 
 public class DetailsFragment extends Fragment {
     private static final String ARG_PICTURE = "picture";
 
     private Picture mPicture;
 
-    // TODO: Rename and change types and number of parameters
     public static DetailsFragment newInstance(Picture picture) {
         DetailsFragment fragment = new DetailsFragment();
         Bundle args = new Bundle();
@@ -34,6 +36,10 @@ public class DetailsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_details, container, false);
+        Picasso.with(getActivity()).load(mPicture.url).into((ImageView) view.findViewById(R.id.picture_details_image));
+        ((TextView) view.findViewById(R.id.picture_details_name)).setText(mPicture.name);
+        ((TextView) view.findViewById(R.id.picture_details_description)).setText(mPicture.description);
+        return view;
     }
 }
