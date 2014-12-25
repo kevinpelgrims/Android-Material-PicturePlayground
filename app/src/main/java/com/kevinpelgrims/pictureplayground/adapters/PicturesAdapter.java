@@ -20,6 +20,7 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.Pictur
     private List<Picture> pictures;
 
     public static class PictureViewHolder extends RecyclerView.ViewHolder {
+        public Picture picture;
         public ImageView image;
         public TextView name, description;
 
@@ -46,6 +47,7 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.Pictur
     @Override
     public void onBindViewHolder(PictureViewHolder holder, int position) {
         Picture picture = pictures.get(position);
+        holder.picture = picture;
         Picasso.with(context).load(picture.url).into(holder.image);
         holder.name.setText(picture.name);
         holder.description.setText(picture.description);
