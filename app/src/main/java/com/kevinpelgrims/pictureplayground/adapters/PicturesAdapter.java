@@ -15,15 +15,15 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.ViewHolder> {
+public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.PictureViewHolder> {
     private Context context;
     private List<Picture> pictures;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class PictureViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
         public TextView name, description;
 
-        public ViewHolder(View itemView) {
+        public PictureViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.picture_image);
             name = (TextView) itemView.findViewById(R.id.picture_name);
@@ -37,14 +37,14 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.ViewHo
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PictureViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                                   .inflate(R.layout.list_item_picture, parent, false);
-        return new ViewHolder(view);
+        return new PictureViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(PictureViewHolder holder, int position) {
         Picture picture = pictures.get(position);
         Picasso.with(context).load(picture.url).into(holder.image);
         holder.name.setText(picture.name);
