@@ -49,6 +49,7 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.Pictur
         Picture picture = pictures.get(position);
         holder.picture = picture;
         Picasso.with(context).load(picture.url).into(holder.image);
+        holder.image.setTransitionName("picture" + position);
         holder.name.setText(picture.name);
         holder.description.setText(picture.description);
     }
