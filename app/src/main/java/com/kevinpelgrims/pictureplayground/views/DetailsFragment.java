@@ -1,6 +1,5 @@
 package com.kevinpelgrims.pictureplayground.views;
 
-
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
