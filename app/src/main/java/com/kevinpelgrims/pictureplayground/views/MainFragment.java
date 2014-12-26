@@ -73,13 +73,12 @@ public class MainFragment extends Fragment {
             @Override
             public void onItemClick(View view, int position) {
                 PicturesAdapter.PictureViewHolder viewHolder = (PicturesAdapter.PictureViewHolder) picturesRecyclerView.getChildViewHolder(view);
-                Picture picture = viewHolder.picture;
-                mListener.onPictureClick(picture, viewHolder);
+                mListener.onPictureClick(viewHolder);
             }
         }));
     }
 
     public interface OnMainFragmentInteractionListener {
-        public void onPictureClick(Picture picture, PicturesAdapter.PictureViewHolder pictureViewHolder);
+        public void onPictureClick(PicturesAdapter.PictureViewHolder pictureViewHolder);
     }
 }

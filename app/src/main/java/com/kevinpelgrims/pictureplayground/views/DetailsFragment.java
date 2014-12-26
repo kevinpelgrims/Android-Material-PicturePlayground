@@ -38,7 +38,6 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details, container, false);
         Picasso.with(getActivity()).load(mPicture.url).into((ImageView) view.findViewById(R.id.picture_details_image));
-        ((TextView) view.findViewById(R.id.picture_details_name)).setText(mPicture.name);
         ((TextView) view.findViewById(R.id.picture_details_description)).setText(mPicture.description);
         return view;
     }
