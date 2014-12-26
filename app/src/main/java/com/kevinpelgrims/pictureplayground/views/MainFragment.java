@@ -55,11 +55,11 @@ public class MainFragment extends Fragment {
 
     private void setupPictures(View view) {
         final List<Picture> pictures = new ArrayList<Picture>();
-        pictures.add(new Picture("http://aliceinreaderland.files.wordpress.com/2013/01/grumpy-cat.png", "Grumpy Cat", "Grumpy"));
-        pictures.add(new Picture("https://lh6.googleusercontent.com/-qdwnNEk24TM/AAAAAAAAAAI/AAAAAAAAAAA/trT7WE7acR8/photo.jpg", "Colonel Meow", "Description"));
-        pictures.add(new Picture("https://livinglist.beaglestreet.com/wp-content/uploads/BUB-yes-with-no-yes-copy-tighter-brighter-256x256.jpg", "Lil Bub", "..."));
-        pictures.add(new Picture("http://aliceinreaderland.files.wordpress.com/2013/01/grumpy-cat.png", "name4", "description4"));
-        pictures.add(new Picture("https://lh6.googleusercontent.com/-qdwnNEk24TM/AAAAAAAAAAI/AAAAAAAAAAA/trT7WE7acR8/photo.jpg", "name5", "description5"));
+        pictures.add(new Picture("http://www.hollywoodreporter.com/sites/default/files/imagecache/modal_800/2014/09/too_good_for_grumpy_cat.jpg", "Grumpy Cat", "No!"));
+        pictures.add(new Picture("http://th08.deviantart.net/fs70/PRE/i/2012/336/c/e/colonel_meow___wallpaper_by_chronoperates-d5mw23j.jpg", "Colonel Meow", "Likes scotch"));
+        pictures.add(new Picture("http://i.dailymail.co.uk/i/pix/2013/04/24/article-0-19752124000005DC-581_968x640.jpg", "Lil Bub", "..."));
+        pictures.add(new Picture("http://cdn.cutestpaw.com/wp-content/uploads/2013/12/Most-Famous-Felines-034.jpg", "Hamilton", "The Hipster Cat"));
+        pictures.add(new Picture("http://cdn.cutestpaw.com/wp-content/uploads/2013/12/Most-Famous-Felines-031.jpg", "Bob", "Street Cat"));
 
         final RecyclerView picturesRecyclerView = (RecyclerView) view.findViewById(R.id.pictures_recycler_view);
 
@@ -74,12 +74,12 @@ public class MainFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 PicturesAdapter.PictureViewHolder viewHolder = (PicturesAdapter.PictureViewHolder) picturesRecyclerView.getChildViewHolder(view);
                 Picture picture = viewHolder.picture;
-                mListener.onPictureClick(picture, viewHolder.image);
+                mListener.onPictureClick(picture, viewHolder);
             }
         }));
     }
 
     public interface OnMainFragmentInteractionListener {
-        public void onPictureClick(Picture picture, ImageView imageView);
+        public void onPictureClick(Picture picture, PicturesAdapter.PictureViewHolder pictureViewHolder);
     }
 }
